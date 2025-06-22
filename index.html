@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>You Don't Need More AI</title>
+  <title>You don't need more AI - YNIK</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
     body {
       background: 
-        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.12) 0%, transparent 50%),
-        radial-gradient(circle at 30% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.1) 0%, transparent 50%),
-        linear-gradient(to right, #0f172a, #1e293b);
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 30% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+        linear-gradient(to right, #0a0f1c, #111827);
       position: relative;
     }
     body::before {
@@ -66,6 +66,13 @@
       position: relative;
       overflow: hidden;
     }
+
+    .cta-button:hover {
+      color: #1e293b; /* Darker text on hover */
+      box-shadow: 0 0 20px rgba(255, 107, 107, 0.7), 0 0 40px rgba(78, 205, 196, 0.5), 0 0 60px rgba(69, 183, 209, 0.3);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      transform: scale(1.05);
+    }
     
     .cta-button::before {
       content: '';
@@ -80,15 +87,6 @@
     
     .cta-button:hover::before {
       left: 100%;
-    }
-    
-    .cta-button:hover {
-      transform: scale(1.15) translateY(-2px) !important;
-      box-shadow: 
-        0 25px 50px rgba(255, 107, 107, 0.4),
-        0 25px 50px rgba(78, 205, 196, 0.3),
-        0 25px 50px rgba(69, 183, 209, 0.3),
-        0 0 100px rgba(255, 159, 243, 0.6) !important;
     }
     
     @keyframes floatButton {
@@ -140,18 +138,28 @@
   </style>
 </head>
 <body class="text-white font-sans">
-  <main class="min-h-screen p-8">
+  <main class="min-h-screen p-8 pt-4">
+    <header class="mx-auto text-center">
+      <h5 class="text text-white font-light tracking-tighter opacity-20 hover:opacity-60">Yeah No, I Know ™</h5>
+    </header>
+
     <section class="max-w-5xl mx-auto text-center py-12">
-      <h1 class="max-w-3xl mx-auto text-4xl sm:text-7xl font-bold mb-4 pb-4 gradient-text">
-        Unlock potential<br /> with AI scaffolding.
+      <h1 class="max-w-3xl mx-auto text-4xl sm:text-6xl font-bold mb-4 pb-4 gradient-text">
+        Not just more AI,<br />scaffolding with an agenda.
       </h1>
       <h2 class="text-2xl text-gray-300 mb-8">
         Infinite assistants, with purpose — no code, no chaos.
       </h2>
-      <h3 class="text-lg max-w-2xl mx-auto text-gray-200 mb-6">
+      <h3 class="text-lg max-w-2xl mx-auto text-gray-200">
         Your team doesn’t need another soulless chatbot. They need agents with <strong class="text-purple-400">personality</strong>, <strong class="text-indigo-400">purpose</strong>, and <strong class="text-blue-300">domain intelligence</strong> — all without writing a single line of code.
-        We'll ask pushy questions to get to what you want, then handle the rest.
+        Our bots ask pushy questions and get what you want, we handle the rest.
       </h3>
+    </section>
+
+    <section class="max-w-3xl mx-auto text-center pb-12">
+      <a href="#start" class="cta-button inline-block text-gray-800 text-xl font-extrabold px-10 py-2 rounded-3xl transform transition-all duration-500 scale-100 hover:scale-105 shadow-2xl relative overflow-hidden">
+        <span class="relative z-10">Start now</span>
+      </a>
     </section>
 
     <section class="max-w-6xl mx-auto py-8 section-glow p-8" id="use-cases">
@@ -271,7 +279,7 @@
     </section>
 
     <section class="max-w-6xl mx-auto py-10 my-16 section-glow p-8" id="what-you-get">
-      <h2 class="text-3xl font-semibold text-center mb-12 text-indigo-300"><span class="text-4xl mr-2">🚀</span>Augment and unlock with these AI plans.</h2>
+      <h2 class="text-3xl font-semibold text-center mb-12 text-gray-300"><span class="text-4xl mr-2">🚀</span>Augment and unlock with these AI plans.</h2>
       
       <div class="grid lg:grid-cols-5 gap-8">
         <!-- Features Column -->
@@ -333,7 +341,7 @@
         </div>
 
         <!-- Clone Plan -->
-        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-gray-400 border-opacity-20">
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-purple-400 border-opacity-40">
           <h3 class="text-2xl font-bold text-center mb-2 text-purple-300">Mozart</h3>
           <div class="pb-6">
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
@@ -389,7 +397,7 @@
               <span class="text-red-400 text-2xl">✗</span>
             </div>
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
-              <span class="text-white text-xl">$12/each</span>
+              <span class="text-white text-xl">$12/mo</span>
             </div>
             <div class="h-16 flex justify-center items-start pt-1">
               <span class="text-blue-300 text-xl font-bold">$24/mo</span>
@@ -398,8 +406,8 @@
         </div>
 
         <!-- da Vinci Plan -->
-        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-red-400 border-opacity-20">
-          <h3 class="text-2xl font-bold text-center mb-2 text-red-200">Da Vinci</h3>
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-green-300 border-opacity-20">
+          <h3 class="text-2xl font-bold text-center mb-2 text-green-300">Da Vinci</h3>
           <div class="pb-6">
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
               <span class="text-green-400 text-2xl">✓</span>
@@ -430,12 +438,39 @@
       </div>
     </section>
 
-    <section class="max-w-5xl mx-auto py-16 section-glow p-8 mt-16">
-      <h2 class="text-3xl font-semibold text-center mb-12 text-green-200"><span class="text-4xl mr-2">🎭</span>Tone Options</h2>
-      
-      <div class="grid sm:grid-cols-3 gap-8">
-        <!-- Gentle Coach -->
-        <div class="bg-gradient-to-br from-green-900/30 to-green-700/20 border border-green-400/30 rounded-xl p-6">
+    <section class="max-w-5xl mx-auto py-12 section-glow p-8 mt-16" id="tone-options">
+      <h2 class="text-3xl font-semibold text-center mb-8 text-green-200">
+        <span class="text-4xl mr-2">🎭</span>Set the tone
+      </h2>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Personality Injections -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-4 text-purple-300 flex items-center">
+            <span class="text-3xl mr-3">🎨</span> Personality Injections
+          </h3>
+          <p class="text-gray-300">Adjust vocal ticks and craft lively experiences that make your AI feel uniquely human and engaging.</p>
+        </div>
+
+        <!-- Conversation Compass -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center">
+            <span class="text-3xl mr-3">🧭</span> Chat Compass
+          </h3>
+          <p class="text-gray-300">Direct the flow and accomplish goals with strategic conversation steering and outcome-focused guidance.</p>
+        </div>
+
+        <!-- Experiment Live -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <h3 class="text-xl font-bold mb-4 text-orange-300 flex items-center">
+            <span class="text-3xl mr-3">🔬</span> Experiment Live
+          </h3>
+          <p class="text-gray-300">Real time sandboxes to play with voice and test different conversational approaches instantly.</p>
+        </div>
+
+         <!-- Gentle Coach -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
           <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
             <span class="text-3xl mr-3">🤗</span> Gentle Coach
           </h3>
@@ -443,7 +478,7 @@
         </div>
 
         <!-- Tough Love -->
-        <div class="bg-gradient-to-br from-red-900/30 to-red-700/20 border border-red-400/30 rounded-xl p-6">
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
           <h3 class="text-xl font-bold mb-4 text-red-300 flex items-center">
             <span class="text-3xl mr-3">💪</span> Tough Love
           </h3>
@@ -451,7 +486,7 @@
         </div>
 
         <!-- Zen Bot -->
-        <div class="bg-gradient-to-br from-cyan-900/30 to-cyan-700/20 border border-cyan-400/30 rounded-xl p-6">
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
           <h3 class="text-xl font-bold mb-4 text-cyan-300 flex items-center">
             <span class="text-3xl mr-3">🧘</span> Zen Bot
           </h3>
@@ -460,7 +495,7 @@
       </div>
     </section>
 
-    <section class="max-w-3xl mx-auto text-center py-20">
+    <section class="max-w-3xl mx-auto text-center py-20" id="start">
       <h2 class="text-3xl font-semibold mb-4 text-purple-200"><span class="text-4xl mr-2">🔧</span>Build smarter bots, not more noise.</h2>
       <p class="text-lg text-gray-200">
         Plug in a purpose. Pick a tone. Hit deploy.
@@ -468,11 +503,130 @@
       <p class="text-lg text-gray-200 mb-8">
         Your bot trains itself on curated sources and stays updated.
       </p>
-      <a href="#" class="cta-button inline-block text-black text-2xl font-extrabold px-12 py-6 rounded-3xl transition-all duration-500 transform hover:scale-115 shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden">
-        <span class="relative z-10 drop-shadow-lg">🚀 Start Building For Free</span>
+      <a href="#" class="cta-button inline-block text-black text-2xl font-extrabold px-12 py-6 rounded-3xl transform transition-all duration-500 scale-100 hover:scale-105 shadow-2xl relative overflow-hidden">
+        <span class="relative z-10">🚀 Start Building For Free</span>
       </a>
       <p class="text-sm text-gray-400 mt-4">No credit card. Just imagination.</p>
     </section>
+
+    <section class="max-w-6xl mx-auto py-8 section-glow p-8 mt-16" id="testimonials">
+      <h2 class="text-3xl font-semibold text-center mb-12 text-gray-300">
+        <span class="text-4xl mr-2">💬</span>Conversations with results
+      </h2>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Testimonial 1 -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 relative">
+            <div class="absolute -bottom-2 left-6 w-4 h-4 bg-gray-700/50 transform rotate-45"></div>
+            <p class="text-gray-200 italic">
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam."
+            </p>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-white">Sarah Johnson</p>
+            <p class="text-sm text-gray-400">Product Manager, TechCorp</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 relative">
+            <div class="absolute -bottom-2 left-6 w-4 h-4 bg-gray-700/50 transform rotate-45"></div>
+            <p class="text-gray-200 italic">
+              "Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse."
+            </p>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-white">Marcus Chen</p>
+            <p class="text-sm text-gray-400">CEO, StartupVenture</p>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6">
+          <div class="bg-gray-700/50 rounded-lg p-4 mb-4 relative">
+            <div class="absolute -bottom-2 left-6 w-4 h-4 bg-gray-700/50 transform rotate-45"></div>
+            <p class="text-gray-200 italic">
+              "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis."
+            </p>
+          </div>
+          <div class="text-left">
+            <p class="font-semibold text-white">Emily Rodriguez</p>
+            <p class="text-sm text-gray-400">Head of Operations, ScaleUp Inc</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-6xl mx-auto py-16 p-8 mt-16" id="wild-bots">
+      <h2 class="text-3xl font-semibold text-center mb-4 text-gray-300">
+        <span class="text-4xl mr-2">🤖</span>Our Wildest Bots Yet
+      </h2>
+      <p class="text-center mb-12 text-gray-400">Some of the interesting creations from our users</p>
+      
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Speculative Scenario Simulator -->
+        <div class="bg-gray-900 bg-opacity-20 rounded-xl p-6 border border-purple-400 border-opacity-30">
+          <h3 class="text-xl font-bold mb-4 text-purple-300 flex items-center">
+            <span class="text-3xl mr-3">🔮</span> Speculative Scenario Simulator
+          </h3>
+          <p class="text-gray-300 mb-4">Gathers emerging tech and global trends to build "what-if" future scenarios. Helps governments and businesses invest in the right R&D for tomorrow's world.</p>
+          <div class="border-t border-gray-600 pt-4">
+            <h4 class="text-sm font-semibold text-purple-200 mb-2">Why we made it</h4>
+            <p class="text-sm text-gray-400">Strategic planners needed a way to stress-test their assumptions against multiple futures, not just the most likely one.</p>
+          </div>
+        </div>
+
+        <!-- Culinary Fusion Finder -->
+        <div class="bg-gray-900 bg-opacity-20 rounded-xl p-6 border border-green-400 border-opacity-30">
+          <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
+            <span class="text-3xl mr-3">🍽️</span> Culinary Fusion Finder
+          </h3>
+          <p class="text-gray-300 mb-4">Analyzes thousands of global recipes to spot unexpected similarities between distant cuisines. Perfect for chefs creating innovative fusion dishes.</p>
+          <div class="border-t border-gray-600 pt-4">
+            <h4 class="text-sm font-semibold text-green-200 mb-2">Why we made it</h4>
+            <p class="text-sm text-gray-400">Culinary creativity shouldn't be limited by what you already know—sometimes the best combinations come from patterns you'd never notice.</p>
+          </div>
+        </div>
+
+        <!-- Which City Wins Relocation Guide -->
+        <div class="bg-gray-900 bg-opacity-20 rounded-xl p-6 border border-blue-400 border-opacity-30">
+          <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center">
+            <span class="text-3xl mr-3">🏙️</span> "Which City Wins?" Relocation Guide
+          </h3>
+          <p class="text-gray-300 mb-4">Input lifestyle preferences and get data-driven city comparisons with rich visual breakdowns. No more gut feelings about your next home.</p>
+          <div class="border-t border-gray-600 pt-4">
+            <h4 class="text-sm font-semibold text-blue-200 mb-2">Why we made it</h4>
+            <p class="text-sm text-gray-400">Moving somewhere new is expensive and life-changing—you deserve better than Googling "best cities for young professionals" and hoping for the best.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-4xl mx-auto py-16 text-center">
+      <h2 class="text-2xl font-semibold mb-8 text-gray-300">About Yeah No I Know</h2>
+      <p class="text-lg text-gray-400 leading-relaxed mb-8">
+       <strong> The only responsible use of AI is to carefully amplify human potential. </strong><br />
+        Born from the frustration of watching teams struggle with weak generic tools that lack context, purpose, and frank clarity.
+        Our platform gives this to you. No coding required, no corporate BS—just intelligent tools that get smarter as you use them. We might just an AI wrapper, but we're also humans who care about your success.
+        We've decided to take our platform public and let others create their own temporary geniuses.
+      </p>
+    </section>
+
+    <footer class="max-w-6xl mx-auto py-8 border-t border-gray-700">
+      <div class="flex flex-wrap justify-center gap-8 text-gray-400">
+        <a href="#" class="hover:text-white transition-colors duration-200">Privacy Policy</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Terms of Service</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Support</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Documentation</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Blog</a>
+        <a href="#" class="hover:text-white transition-colors duration-200">Contact</a>
+      </div>
+      <div class="text-center mt-6 text-sm text-gray-500">
+        <p>&copy; YNIK: AI scaffolding with an agenda.</p>
+      </div>
+    </footer>
   </main>
 </body>
 </html>
