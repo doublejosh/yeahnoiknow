@@ -173,28 +173,38 @@
     .fade-in-card.delay-7 { transition-delay: 0.7s; }
     .fade-in-card.delay-8 { transition-delay: 0.8s; }
     .fade-in-card.delay-9 { transition-delay: 0.9s; }
+    .fade-in-card.delay-10 { transition-delay: 1.0s; }
+    .fade-in-card.delay-11 { transition-delay: 1.1s; }
+    .fade-in-card.delay-12 { transition-delay: 1.2s; }
   </style>
 </head>
 <body class="text-white font-sans">
   <main class="min-h-screen p-8 pt-4">
-    <header class="mx-auto text-center">
-      <h5 class="text text-white font-light tracking-tighter opacity-20 hover:opacity-60">Yeah No, I Know ™</h5>
+    <header class="mx-auto text-center mb-16">
+      <a
+      href="#about"
+      class="text text-white font-light tracking-tighter opacity-30 hover:opacity-60 transition-colors duration-300">
+        Yeah No, I Know ™
+      </a>
     </header>
 
-    <section class="max-w-5xl mx-auto text-center py-12">
-      <h1 class="max-w-3xl mx-auto text-4xl sm:text-6xl font-bold mb-4 pb-4 gradient-text">
+    <section class="max-w-5xl mx-auto text-center">
+      <!-- <h4 class="inline-block text-sm text-white py-1 px-4 rounded-full border border-white opacity-60">
+        Build agents
+      </h4> -->
+      <h1 class="max-w-6xl mx-auto text-4xl sm:text-7xl font-bold mb-4 pb-4 gradient-text">
         Not just more AI,<br />scaffolding with an agenda.
       </h1>
-      <h2 class="text-2xl text-gray-300 mb-8">
+      <h2 class="text-3xl text-gray-300 mb-8">
         Infinite assistants, with purpose — no code, no chaos.
       </h2>
-      <h3 class="text-lg max-w-2xl mx-auto text-gray-200">
-        Your team doesn’t need another soulless chatbot. They need agents with <strong class="text-purple-400">personality</strong>, <strong class="text-indigo-400">purpose</strong>, and <strong class="text-blue-300">domain intelligence</strong> — all without writing a single line of code.
-        Our bots ask pushy questions and get what you want, we handle the rest.
+      <h3 class="text-lg max-w-2xl mx-auto text-gray-400">
+        Your team needs agents with <strong class="text-purple-400">personality</strong>, <strong class="text-indigo-400">purpose</strong>, and <strong class="text-blue-300">domain intelligence</strong> — all without writing a single line of code.
+        Not another soulless chatbot; our agenda ask pushy questions and get what you want, we handle the rest.
       </h3>
     </section>
 
-    <section class="max-w-3xl mx-auto text-center pb-20 fade-in-section">
+    <section class="max-w-3xl mx-auto text-center my-16">
       <a href="#start" class="cta-button inline-block text-gray-800 text-xl font-extrabold px-10 py-2 rounded-3xl transform transition-all duration-500 scale-100 hover:scale-105 shadow-2xl relative overflow-hidden">
         <span class="relative z-10">Start now</span>
       </a>
@@ -269,7 +279,7 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
         <!-- Market Intelligence -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-red-400 hover:bg-opacity-20 hover:border-red-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-red-500 fade-in-card delay-1">
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-red-400 hover:bg-opacity-20 hover:border-red-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-red-500 fade-in-card delay-1">
           <div class="flex items-center mb-2">
             <span class="text-2xl mr-3">📊</span>
             <div>
@@ -280,20 +290,44 @@
           <p class="text-sm text-gray-300">Monitor industry trends and competitive moves tailored to your business.</p>
         </div>
 
-        <!-- Study Buddy -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-green-400 hover:bg-opacity-20 hover:border-green-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-green-500 fade-in-card delay-2">
+        <!-- Priority Action Plans -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-green-400 hover:bg-opacity-20 hover:border-green-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-green-500 fade-in-card delay-6">
           <div class="flex items-center mb-2">
-            <span class="text-2xl mr-3">📚</span>
+            <span class="text-2xl mr-3">💡</span>
             <div>
-              <h4 class="font-bold text-green-200 text-lg">Study Buddy</h4>
+              <h4 class="font-bold text-green-200 text-lg">Priority Action Plans</h4>
               <span class="text-xs text-green-300 uppercase tracking-wide">Productivity</span>
             </div>
           </div>
-          <p class="text-sm text-gray-300">Personalized learning with smart summarization and knowledge synthesis.</p>
+          <p class="text-sm text-gray-300">Work through tough choices with guided frameworks and expert insights.</p>
+        </div>
+
+        <!-- Onboarding Journeys -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-red-400 hover:bg-opacity-20 hover:border-cyan-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-cyan-500 fade-in-card delay-11">
+          <div class="flex items-center mb-2">
+            <span class="text-2xl mr-3">🚀</span>
+            <div>
+              <h4 class="font-bold text-red-200 text-lg">Onboarding Journeys</h4>
+              <span class="text-xs text-red-200 uppercase tracking-wide">Business</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300">Customize a get-started co-pilot for any product or team with personalized guidance.</p>
+        </div>
+
+        <!-- Conversation Prep -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-blue-400 hover:bg-opacity-20 hover:border-blue-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500 fade-in-card delay-4">
+          <div class="flex items-center mb-2">
+            <span class="text-2xl mr-3">🗣️</span>
+            <div>
+              <h4 class="font-bold text-blue-200 text-lg">Conversation Prep</h4>
+              <span class="text-xs text-blue-300 uppercase tracking-wide">Communication</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300">Practice difficult conversations with strategic coaching and scenario planning.</p>
         </div>
 
         <!-- Morning Momentum -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-3">
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-3">
           <div class="flex items-center mb-2">
             <span class="text-2xl mr-3">🌅</span>
             <div>
@@ -304,20 +338,20 @@
           <p class="text-sm text-gray-300">Start your day with purpose through guided intention-setting and goal alignment.</p>
         </div>
         
-        <!-- Conversation Prep -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-blue-400 hover:bg-opacity-20 hover:border-blue-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500 fade-in-card delay-4">
+        <!-- Study Buddy -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-green-400 hover:bg-opacity-20 hover:border-green-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-green-500 fade-in-card delay-2">
           <div class="flex items-center mb-2">
-            <span class="text-2xl mr-3">🗣️</span>
+            <span class="text-2xl mr-3">📚</span>
             <div>
-              <h4 class="font-bold text-blue-200 text-lg">Conversation Prep</h4>
-              <span class="text-xs text-blue-300 uppercase tracking-wide">Communication</span>
+              <h4 class="font-bold text-green-200 text-lg">Study Buddy</h4>
+              <span class="text-xs text-green-300 uppercase tracking-wide">Productivity</span>
             </div>
           </div>
-          <p class="text-sm text-gray-300">Practice difficult conversations with strategic coaching and scenario planning.</p>
+          <p class="text-sm text-gray-300">Personalized learning with smart summarization and knowledge synthesis.</p>
         </div>
-        
+
         <!-- Product Expert -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-red-400 hover:bg-opacity-20 hover:border-red-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-red-500 fade-in-card delay-5">
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-red-400 hover:bg-opacity-20 hover:border-red-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-red-500 fade-in-card delay-5">
           <div class="flex items-center mb-2">
             <span class="text-2xl mr-3">🚀</span>
             <div>
@@ -328,20 +362,20 @@
           <p class="text-sm text-gray-300">Deep product knowledge and strategic roadmap guidance for product managers and teams.</p>
         </div>
 
-        <!-- Priority Action Plans -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-green-400 hover:bg-opacity-20 hover:border-green-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-green-500 fade-in-card delay-6">
+        <!-- Strategic Leadership -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-blue-400 hover:bg-opacity-20 hover:border-blue-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500 fade-in-card delay-8">
           <div class="flex items-center mb-2">
-            <span class="text-2xl mr-3">💡</span>
+            <span class="text-2xl mr-3">⚡</span>
             <div>
-              <h4 class="font-bold text-green-200 text-lg">Priority Action Plans</h4>
-              <span class="text-xs text-green-300 uppercase tracking-wide">Productivity</span>
+              <h4 class="font-bold text-blue-200 text-lg">Strategic Leadership</h4>
+              <span class="text-xs text-blue-300 uppercase tracking-wide">Communication</span>
             </div>
           </div>
-          <p class="text-sm text-gray-300">Work through tough choices with guided frameworks and expert insights.</p>
+          <p class="text-sm text-gray-300">Executive presence coaching and strategic communication for high-stakes leadership scenarios.</p>
         </div>
-        
+
         <!-- Evening Reflection -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-7">
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-7">
           <div class="flex items-center mb-2">
             <span class="text-2xl mr-3">🌙</span>
             <div>
@@ -352,21 +386,8 @@
           <p class="text-sm text-gray-300">Unwind and process your day through guided journaling and reflection.</p>
         </div>
         
-        <!-- Strategic Leadership -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-blue-400 hover:bg-opacity-20 hover:border-blue-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-blue-500 fade-in-card delay-8">
-          <div class="flex items-center mb-2">
-            <span class="text-2xl mr-3">⚡</span>
-            <div>
-              <h4 class="font-bold text-blue-200 text-lg">Strategic Leadership</h4>
-              <span class="text-xs text-blue-300 uppercase tracking-wide">Communication</span>
-            </div>
-          </div>
-          <p class="text-sm text-gray-300">Executive presence coaching and strategic communication for high-stakes leadership scenarios.</p>
-        </div>
-    
-        
         <!-- Life Planning -->
-        <div class="p-6 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-9">
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-purple-400 hover:bg-opacity-20 hover:border-purple-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-purple-500 fade-in-card delay-9">
           <div class="flex items-center mb-2">
             <span class="text-2xl mr-3">🗺️</span>
             <div>
@@ -375,6 +396,30 @@
             </div>
           </div>
           <p class="text-sm text-gray-300">Navigate chaos with structured problem-solving and priority clarification.</p>
+        </div>
+
+        <!-- Creative Kickoff -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-orange-400 hover:bg-opacity-20 hover:border-yellow-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-orange-500 fade-in-card delay-10">
+          <div class="flex items-center mb-2">
+            <span class="text-2xl mr-3">🎨</span>
+            <div>
+              <h4 class="font-bold text-yellow-200 text-lg">Creative Kickoff</h4>
+              <span class="text-xs text-yellow-200 uppercase tracking-wide">Creative</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300">Get unstuck, make choices and exit the aesthetic quagmire with guided creative direction.</p>
+        </div>
+
+        <!-- Intake Wizard -->
+        <div class="p-4 bg-gray-900 bg-opacity-10 rounded-lg border-l-4 border-yellow-400 hover:bg-opacity-20 hover:border-green-300 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:shadow-xl hover:shadow-yellow-500 fade-in-card delay-12">
+          <div class="flex items-center mb-2">
+            <span class="text-2xl mr-3">📝</span>
+            <div>
+              <h4 class="font-bold text-green-200 text-lg">Intake Wizard</h4>
+              <span class="text-xs text-green-300 uppercase tracking-wide">Productivity</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300">Walk people through simple steps to collect info better than a survey with smart follow-ups.</p>
         </div>
       </div>
     </section>
@@ -674,7 +719,7 @@
       </div>
     </section>
 
-    <section class="max-w-2xl mx-auto py-16 text-center fade-in-section">
+    <section class="max-w-2xl mx-auto py-16 text-center fade-in-section" id="about">
       <h2 class="text-2xl font-semibold mb-8 text-gray-300">About Yeah No I Know</h2>
       <p class="text-lg text-gray-400 leading-relaxed mb-8">
        <strong> The only responsible use of AI is to carefully amplify human potential.</strong> <br />
@@ -682,13 +727,27 @@
         Our platform gives this to you. No coding required, no corporate BS—just intelligent tools that get smarter as you use them. We might be "just an AI wrapper," but we're also humans who care about your success.
         Harness temporary geniuses.
       </p>
+      <p class="text-lg text-gray-400 leading-relaxed mb-8">
+        <strong>Yeah No I Know</strong> is a product of curious enthusiasts and builders who see the power of AI, but also weaknesses and costs.
+        We are committed to creating tools that empower individuals and teams to achieve more with less friction.
+      </p>
+      <p class="text-lg text-gray-400 leading-relaxed mb-8">
+        Our mission is to democratize access to advanced AI capabilities, making it easy for anyone to build and deploy intelligent assistants that can help them achieve their dreams.
+        We believe AI should be accessible to everyone, regardless of technical expertise or resources. Reach out to learn more.
+      </p>
     </section>
 
     <footer class="max-w-6xl mx-auto py-8 border-t border-gray-700">
       <div class="flex flex-wrap justify-center gap-8 text-gray-400">
-        <a href="#" class="hover:text-white transition-colors duration-200">Support</a>
-        <a href="#" class="hover:text-white transition-colors duration-200">Schedule Demo</a>
-        <a href="#" class="hover:text-white transition-colors duration-200">Partnerships</a>
+        <a href="mailto:support@yeahnoiknow.com" target="_blank" class="hover:text-white transition-colors duration-200">
+          Support
+        </a>
+        <a href="#" class="hover:text-white transition-colors duration-200">
+          Schedule Demo
+        </a>
+        <a href="mailto:partners@yeahnoiknow.com" target="_blank" class="hover:text-white transition-colors duration-200">
+          Partnerships
+        </a>
       </div>
       <div class="text-center mt-6 text-sm text-gray-500">
         <p>&copy; YNIK: AI scaffolding with an agenda.</p>
