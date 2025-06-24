@@ -201,17 +201,123 @@
       }
     }
 
-    /* See more button */
+    /* See more button - Enhanced */
     .see-more-btn {
-      background: linear-gradient(45deg, #6366f1, #8b5cf6, #a855f7);
-      background-size: 200% 200%;
-      animation: gradientShift 3s ease-in-out infinite;
+      background: 
+        linear-gradient(45deg, rgba(255, 107, 107, 0.3), rgba(78, 205, 196, 0.3), rgba(69, 183, 209, 0.3), rgba(150, 206, 180, 0.3), rgba(254, 202, 87, 0.3), rgba(255, 159, 243, 0.3)),
+        linear-gradient(135deg, #1a1a2e, #16213e, #0f172a);
+      background-size: 400% 400%, 100% 100%;
+      animation: rainbowGlow 4s ease-in-out infinite, pulseScale 2s ease-in-out infinite alternate;
       transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 
+        0 4px 15px rgba(255, 107, 107, 0.2),
+        0 0 20px rgba(78, 205, 196, 0.15),
+        0 0 30px rgba(69, 183, 209, 0.1);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+      background-clip: padding-box;
+    }
+
+    .see-more-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .see-more-btn:hover::before {
+      left: 100%;
     }
 
     .see-more-btn:hover {
-      transform: translateY(-2px);
-      color: #10b981
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 
+        0 8px 25px rgba(255, 107, 107, 0.3),
+        0 0 30px rgba(78, 205, 196, 0.25),
+        0 0 40px rgba(69, 183, 209, 0.2);
+      background: 
+        linear-gradient(45deg, rgba(255, 107, 107, 0.4), rgba(78, 205, 196, 0.4), rgba(69, 183, 209, 0.4), rgba(150, 206, 180, 0.4), rgba(254, 202, 87, 0.4), rgba(255, 159, 243, 0.4)),
+        linear-gradient(135deg, #1e293b, #1a202c, #111827);
+    }
+
+    @keyframes pulseScale {
+      0% { 
+        transform: scale(1);
+      }
+      100% { 
+        transform: scale(1.02);
+      }
+    }
+
+    main {
+      overflow: hidden;
+    }
+
+    main::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 107, 107, 0.2) 0%, rgba(78, 205, 196, 0.15) 25%, rgba(69, 183, 209, 0.1) 50%, transparent 75%);
+      animation: radialPulse 6s ease-in-out infinite alternate;
+      z-index: -1;
+      border-radius: 50%;
+      filter: blur(20px);
+    }
+
+    main::after {
+      content: '';
+      position: absolute;
+      top: -25%;
+      left: -25%;
+      width: 150%;
+      height: 150%;
+      background: conic-gradient(from 0deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff, #ff6b6b);
+      animation: conicSpin 60s linear infinite;
+      z-index: -2;
+      border-radius: 50%;
+      filter: blur(30px);
+      opacity: 0.08;
+    }
+
+    @keyframes enterpriseGlow {
+      0%, 100% { 
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3)) hue-rotate(0deg);
+      }
+      50% { 
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5)) hue-rotate(180deg);
+      }
+    }
+
+    @keyframes textShimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes radialPulse {
+      0% { 
+        transform: scale(0.8);
+        opacity: 0.3;
+      }
+      100% { 
+        transform: scale(1.2);
+        opacity: 0.1;
+      }
+    }
+
+    @keyframes conicSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
@@ -229,15 +335,15 @@
         Build agents
       </h4> -->
       <h1 class="max-w-6xl mx-auto text-5xl md:text-7xl lg:text-8xl font-bold mb-4 pb-4 gradient-text">
-        Deploy and share<br /> powerful helpers.<br />
+        Ask and share<br /> powerful helpers.<br />
       </h1>
       <h2 class="text-3xl text-gray-300 mb-2">
         Control every aspect of your AI's personality and approach.<br />
       </h2>
       <p
         class="text-lg text-gray-400 mb-8 mx-auto text-center">
-        Infinite assistants, with purpose — no code, no chaos.
-        Not just more AI, scaffolding with an agenda.
+        Infinite assistants, with purpose — no code, calm the chaos.<br />
+        Not just more AI, conversation scaffolding with an agenda.
       </p>
     </section>
 
@@ -248,12 +354,8 @@
     </section>
 
     <section class="max-w-6xl mx-auto py-12 section-glow p-8 mb-16 fade-in-section" id="tone-options">
-      <h2 class="text-3xl font-semibold text-center mb-4 text-green-200">
-        <span class="text-4xl mr-2">🎭</span> Set the tone
-      </h2>
-
-      <h3 class="text-lg max-w-2xl mx-auto text-gray-400 text-center">
-        Your team needs agents with <strong class="text-purple-400">personality</strong>, <strong class="text-indigo-400">purpose</strong>, and <strong class="text-blue-300">domain intelligence</strong>.<br />
+      <h3 class="text-xl md:mx-32 text-gray-400 text-center">
+        <strong>Set the tone.</strong> Your team needs agents with <strong class="text-purple-400">personality</strong>, <strong class="text-indigo-400">purpose</strong>, and <strong class="text-blue-300">domain intelligence</strong>.<br />
         All without writing a single line of code for public/private use.
         Not another soulless chatbot; we ask pushy questions to get what you want, and handle the tech.
       </h3>
@@ -265,7 +367,7 @@
           <h3 class="text-xl font-bold mb-4 text-purple-300 flex items-center">
             <span class="text-3xl mr-3">🎨</span> Personality Injections
           </h3>
-          <p class="text-gray-300">Adjust vocal ticks and craft lively experiences that make your AI feel uniquely human and engaging.</p>
+          <p class="text-gray-200">Adjust vocal ticks and craft lively experiences that make your AI feel uniquely human and engaging.</p>
         </div>
 
         <!-- Conversation Compass -->
@@ -273,7 +375,7 @@
           <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center">
             <span class="text-3xl mr-3">🧭</span> Chat Compass
           </h3>
-          <p class="text-gray-300">Direct the flow and accomplish goals with strategic conversation steering and outcome-focused guidance.</p>
+          <p class="text-gray-200">Direct the flow and accomplish goals with strategic conversation steering and outcome-focused guidance.</p>
         </div>
 
         <!-- Experiment Live -->
@@ -281,7 +383,7 @@
           <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
             <span class="text-3xl mr-3">🔬</span> Experiment Live
           </h3>
-          <p class="text-gray-300">Real time sandboxes to play with voice and test different conversational approaches instantly.</p>
+          <p class="text-gray-200">Real time sandboxes to play with voice and test different conversational approaches instantly.</p>
         </div>
 
          <!-- Gentle Coach -->
@@ -289,7 +391,7 @@
           <h3 class="text-xl font-bold mb-4 text-green-300 flex items-center">
             <span class="text-3xl mr-3">🤗</span> Gentle Coach
           </h3>
-          <p class="text-gray-300">Warm and validating approach that supports you through challenges with empathy and encouragement.</p>
+          <p class="text-gray-200">Warm and validating approach that supports you through challenges with empathy and encouragement.</p>
         </div>
 
         <!-- Tough Love -->
@@ -297,7 +399,7 @@
           <h3 class="text-xl font-bold mb-4 text-red-300 flex items-center">
             <span class="text-3xl mr-3">💪</span> Tough Love
           </h3>
-          <p class="text-gray-300">No BS, straight talk that cuts through excuses and pushes you toward action and accountability.</p>
+          <p class="text-gray-200">No BS, straight talk that cuts through excuses and pushes you toward action and accountability.</p>
         </div>
 
         <!-- Zen Bot -->
@@ -305,7 +407,7 @@
           <h3 class="text-xl font-bold mb-4 text-blue-300 flex items-center">
             <span class="text-3xl mr-3">🧘</span> Zen Agent
           </h3>
-          <p class="text-gray-300">Asks more than it answers, guiding you to discover insights through thoughtful questions and reflection.</p>
+          <p class="text-gray-200">Asks more than it answers, guiding you to discover insights through thoughtful questions and reflection.</p>
         </div>
       </div>
     </section>
@@ -504,32 +606,25 @@
       </div>
 
       <!-- See More Button -->
-      <div class="text-center mt-8">
-        <button id="seeMoreBtn" class="see-more-btn text-white font-semibold py-3 px-8 rounded-lg border-0 cursor-pointer">
-          <span class="flex items-center">
-            <span>See more use cases</span>
-            <svg class="ml-2 w-4 h-4 transition-transform duration-300" id="seeMoreArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      <div class="text-center mt-12">
+        <button id="seeMoreBtn" class="see-more-btn text-white text-lg font-bold py-4 px-12 rounded-xl border-0 cursor-pointer shadow-2xl">
+          <span class="flex items-center justify-center">
+            <span class="text-xl">🚀 More agent template</span>
+            <svg class="ml-3 w-5 h-5 transition-transform duration-300" id="seeMoreArrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path>
             </svg>
           </span>
         </button>
       </div>
     </section>
 
-    <section class="max-w-3xl mx-auto text-center py-8 fade-in-section">
-      <a href="#start" target="_blank" class="cta-button inline-block text-gray-800 text-xl font-extrabold px-10 py-2 rounded-3xl transform transition-all duration-500 scale-100 hover:scale-105 shadow-2xl relative overflow-hidden">
-        <span class="relative z-10">Start now</span>
-      </a>
-      <p class="text-sm text-gray-400 mt-4">No credit card. Just imagination.</p>
-    </section>
-
     <section class="max-w-6xl mx-auto py-10 mt-16 mb-24 section-glow p-8 fade-in-section" id="what-you-get">
       <h2 class="text-3xl font-semibold text-center mb-12 text-gray-300"><span class="text-4xl mr-2">🚀</span> Augment and unlock with these AI plans.</h2>
       
-      <div class="grid lg:grid-cols-5 gap-8">
+      <div class="grid lg:grid-cols-7 gap-3">
         <!-- Features Column -->
-        <div class="lg:col-span-2">
-          <div class="pt-16 pb-6">
+        <div class="lg:col-span-3">
+          <div class="pt-16 pb-6 pr-6">
             <div class="flex items-start h-16 mb-6">
               <span class="text-3xl mr-4 mt-1">🎯</span>
               <div>
@@ -554,14 +649,14 @@
             <div class="flex items-start h-16 mb-6">
               <span class="text-3xl mr-4 mt-1">🛠️</span>
               <div>
-                <h4 class="text-gray-100 text-lg font-semibold mb-1">Zero-Code Interface</h4>
-                <p class="text-gray-400 text-sm">Build, deploy, and evolve your AI assistants without writing a single line of code.</p>
+                <h4 class="text-gray-100 text-lg font-semibold mb-1">Zero-Code Involved</h4>
+                <p class="text-gray-400 text-sm">Build, deploy, and evolve all your AI assistants with easy to use tools. No tech wizardry required.</p>
               </div>
             </div>
             <div class="flex items-start h-16 mb-6">
               <span class="text-3xl mr-4 mt-1">👥</span>
               <div>
-                <h4 class="text-gray-100 text-lg font-semibold mb-1">Team Accounts</h4>
+                <h4 class="text-gray-100 text-lg font-semibold mb-1">Accounts</h4>
                 <p class="text-gray-400 text-sm">Collaborate with your team, share agents, and manage permissions across your organization.</p>
               </div>
             </div>
@@ -580,14 +675,14 @@
               </div>
             </div>
             <div class="h-16 flex items-start pt-1">
-            
+             
             </div>
           </div>
         </div>
 
         <!-- Clone Plan -->
-        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-purple-400 border-opacity-40">
-          <h3 class="text-2xl font-bold text-center mb-2 text-purple-300">Starter</h3>
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-2 pt-6 border border-purple-400 border-opacity-40">
+          <h3 class="text-xl font-bold text-center mb-2 text-purple-300">Starter</h3>
           <div class="">
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
               <span class="text-green-400 text-2xl">✓</span>
@@ -611,22 +706,22 @@
               <span class="text-white text-xl">Limited</span>
             </div>
             <div class="h-16 flex justify-center items-start pt-1">
-              <span class="text-purple-300 text-2xl font-bold">$12/mo</span>
+              <span class="text-purple-300 text-2xl">$12/mo</span>
             </div>
           </div>
-          <div class="bg-purple-600 bg-opacity-20 p-4 rounded-b-xl">
+    
             <button class="w-full bg-purple-500 hover:bg-purple-600 text-white text-lg font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
               Play
             </button>
-          </div>
+     
         </div>
 
         <!-- Conductor Plan -->
-        <div class="bg-gradient-to-br from-blue-900 bg-opacity-20 rounded-xl p-6 border-2 border-blue-400 relative">
+        <div class="bg-gradient-to-br from-blue-900 bg-opacity-20 rounded-xl p-2 pt-6 border-2 border-blue-400 relative">
           <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
             Popular
           </div>
-          <h3 class="text-2xl font-bold text-center mb-2 text-blue-300">Pro</h3>
+          <h3 class="text-xl font-bold text-center mb-2 text-blue-300">Pro</h3>
           <div class="">
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
               <span class="text-green-400 text-2xl">✓</span>
@@ -653,16 +748,16 @@
               <span class="text-blue-300 text-2xl font-bold">$50/mo</span>
             </div>
           </div>
-          <div class="bg-blue-600 bg-opacity-20 p-4 rounded-b-xl">
+        
             <button class="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
               Start
             </button>
-          </div>
+        
         </div>
 
         <!-- da Vinci Plan -->
-        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-6 border border-green-300 border-opacity-20">
-          <h3 class="text-2xl font-bold text-center mb-2 text-green-300">Team</h3>
+        <div class="bg-gray-900 bg-opacity-10 rounded-xl p-2 pt-6 border border-green-300 border-opacity-20">
+          <h3 class="text-xl font-bold text-center mb-2 text-green-300">Team</h3>
           <div class="">
             <div class="flex justify-center items-start h-16 mb-6 pt-1">
               <span class="text-green-400 text-2xl">✓</span>
@@ -689,11 +784,50 @@
               <span class="text-green-400 text-2xl font-bold">$180/mo</span>
             </div>
           </div>
-          <div class="bg-green-600 bg-opacity-20 p-4 rounded-b-xl">
-            <button class="w-full bg-green-500 hover:bg-green-600 text-white text-lg font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+   
+            <button class="w-full bg-green-500 hover:bg-green-600 text-black text-lg font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
               Build
             </button>
+        
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="bg-black bg-opacity-10 rounded-xl p-2 pt-6 border border-black border-opacity-60">
+          <h3 
+            class="text-xl font-bold text-center mb-2 text-black"
+            style="text-shadow: 0 0 10px rgba(255, 255, 255, 0.8)"
+          >
+            Enterprise
+          </h3>
+          <div class="">
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-2xl">✓</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-2xl">✓</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-2xl">✓</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-2xl">✓</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-xl">✓</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-green-400 text-xl text-center">Custom</span>
+            </div>
+            <div class="flex justify-center items-start h-16 mb-6 pt-1">
+              <span class="text-white text-xl">Cheap</span>
+            </div>
+            <div class="h-16 flex justify-center items-start pt-1">
+              <span class="text-gray-400 text-2xl font-bold">$?</span>
+            </div>
           </div>
+          <button class="w-full bg-black hover:text-green-400 text-white text-lg font-semibold py-2 px-4 rounded-lg transition-colors duration-200">
+            Done
+          </button>
         </div>
       </div>
 
@@ -847,8 +981,15 @@
       </div>
     </section>
 
-    <section class="max-w-2xl mx-auto py-16 text-center fade-in-section" id="about">
-      <h2 class="text-2xl font-semibold mb-8 text-gray-300">About: Yeah No I Know (YNIK)</h2>
+    <section class="max-w-3xl mx-auto text-center py-8 fade-in-section">
+      <a href="#start" target="_blank" class="cta-button inline-block text-gray-800 text-xl font-extrabold px-10 py-2 rounded-3xl transform transition-all duration-500 scale-100 hover:scale-105 shadow-2xl relative overflow-hidden">
+        <span class="relative z-10">Start now</span>
+      </a>
+      <p class="text-sm text-gray-400 mt-4">No credit card. Just imagination.</p>
+    </section>
+
+    <section class="max-w-2xl mx-auto py-16 pt-36 text-center fade-in-section" id="about">
+      <h2 class="text-3xl font-semibold mb-8 text-gray-300">About: Yeah No I Know (YNIK)</h2>
       <p class="text-lg text-gray-400 leading-relaxed mb-8">
        <strong> The only responsible use of AI is to carefully amplify human potential.</strong> <br />
         Born from the frustration of watching teams struggle with weak generic tools that lack context, purpose, and frank clarity.
