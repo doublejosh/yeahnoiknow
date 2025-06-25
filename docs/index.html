@@ -137,8 +137,8 @@
               <a href="#deployment" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
                 Deployment
               </a>
-              <a href="#api-reference" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
-                API Reference
+              <a href="#integration" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Integration Methods
               </a>
               <a href="#troubleshooting" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
                 Troubleshooting
@@ -211,47 +211,53 @@
               
               <p class="text-gray-300 mb-6">
                 YNIK agents aren't just chatbots - they're personalities with purpose. 
-                Here's how to craft an engaging conversational experience:
+                To create an engaging conversational experience, you'll need to figure out these 6 essential elements:
               </p>
 
-              <div class="grid md:grid-cols-2 gap-6 mb-6">
-                <div class="section-glow p-4 rounded-lg">
-                  <h4 class="text-lg font-semibold mb-3 text-yellow-300">🎨 Personality Traits</h4>
-                  <ul class="text-sm text-gray-300 space-y-1">
-                    <li>• Friendly & approachable</li>
-                    <li>• Direct & action-oriented</li>
-                    <li>• Empathetic & supportive</li>
-                    <li>• Professional & knowledgeable</li>
-                  </ul>
+              <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <div class="section-glow p-4 rounded-lg border-l-4 border-blue-400">
+                  <h4 class="text-lg font-semibold mb-2 text-blue-300">🎯 Purpose</h4>
+                  <p class="text-sm text-gray-300">What problem does your agent solve? What's the end goal?</p>
                 </div>
-                <div class="section-glow p-4 rounded-lg">
-                  <h4 class="text-lg font-semibold mb-3 text-cyan-300">🧭 Conversation Style</h4>
-                  <ul class="text-sm text-gray-300 space-y-1">
-                    <li>• Ask clarifying questions</li>
-                    <li>• Provide actionable advice</li>
-                    <li>• Use examples and analogies</li>
-                    <li>• Remember conversation context</li>
-                  </ul>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-green-400">
+                  <h4 class="text-lg font-semibold mb-2 text-green-300">👤 Role</h4>
+                  <p class="text-sm text-gray-300">Who is your agent? Expert, coach, assistant, friend?</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-purple-400">
+                  <h4 class="text-lg font-semibold mb-2 text-purple-300">💬 Response</h4>
+                  <p class="text-sm text-gray-300">How does your agent structure conversations and answers?</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-yellow-400">
+                  <h4 class="text-lg font-semibold mb-2 text-yellow-300">🗣️ Voice</h4>
+                  <p class="text-sm text-gray-300">What tone and personality shine through in every message?</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-red-400">
+                  <h4 class="text-lg font-semibold mb-2 text-red-300">✨ Interjections</h4>
+                  <p class="text-sm text-gray-300">Catchphrases and expressions that make your agent unique</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-cyan-400">
+                  <h4 class="text-lg font-semibold mb-2 text-cyan-300">📋 Steps</h4>
+                  <p class="text-sm text-gray-300">The process or methodology your agent follows</p>
                 </div>
               </div>
 
               <div class="bg-purple-900 bg-opacity-20 border border-purple-400 border-opacity-30 p-4 rounded-lg">
                 <h4 class="text-lg font-semibold mb-2 text-purple-300">Example Configuration</h4>
-                <pre><code class="text-gray-300">{
-  "role": "figure skating expert",
-  "tone": "encouraging but ruthless",
-  "interjections": [
-    "You can do this!",
-    "Don't hold back!",
-    "Push yourself!"
-  ],
-  "steps": [
-    "Warm up with basic moves",
-    "Practice jumps and spins",
-    "Focus on form and technique"
-  ],
-}</code></pre>
+                <div class="text-gray-300 space-y-2 text-sm">
+                  <p><strong class="text-blue-300">Purpose:</strong> Help figure skaters improve their technique and overcome mental blocks</p>
+                  <p><strong class="text-green-300">Role:</strong> Former Olympic figure skating coach with 20+ years experience</p>
+                  <p><strong class="text-purple-300">Response:</strong> Ask about current skill level, identify specific challenges, provide step-by-step guidance</p>
+                  <p><strong class="text-yellow-300">Voice:</strong> Encouraging but direct, tough love approach, believes in pushing limits</p>
+                  <p><strong class="text-red-300">Interjections:</strong> "You can do this!", "Don't hold back!", "Push yourself!", "Feel the ice!"</p>
+                  <p><strong class="text-cyan-300">Steps:</strong> 1) Assess current ability, 2) Warm up with basics, 3) Practice targeted moves, 4) Focus on form and technique, 5) Build confidence through repetition</p>
+                </div>
               </div>
+
+              <p class="text-gray-300 mt-6">
+                These simple building blocks will build the foundation for your agent's personality and purpose.
+                More nuance will emerge as you push further, but these ideas wil get you started.
+                The authoring experience will guide you through configuring these elements in detail.
+              </p>
             </section>
 
             <!-- Templates Section -->
@@ -314,37 +320,187 @@
               </div>
             </section>
 
-            <!-- API Reference Section -->
-            <section id="api-reference" class="mb-12">
-              <h2 class="text-3xl font-bold mb-6 text-red-300">API Reference</h2>
+            <!-- Integration Methods Section -->
+            <section id="integration" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-red-300">Integration Methods</h2>
               
-              <p class="text-gray-300 mb-6">
-                Integrate YNIK agents into your applications with our REST API:
+              <p class="text-gray-300 mb-8">
+                Integrate YNIK agents into your website or application with these simple methods:
               </p>
 
-              <h3 class="text-xl font-semibold mb-4 text-gray-200">Authentication</h3>
-              <pre class="mb-6"><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
-     -H "Content-Type: application/json" \
-     https://api.yeahnoiknow.com/v1/agents</code></pre>
+              <!-- Snippet Embed Method -->
+              <div class="section-glow p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-purple-300">
+                  🔗 1. Snippet Embed Method
+                </h3>
+                <p class="text-gray-300 mb-4">
+                  The easiest way to add a chatbot to any website. Just include our JavaScript file and it automatically injects the chatbot interface.
+                </p>
+                
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Basic Implementation</h4>
+                <pre class="mb-4"><code>&lt;!-- Add this before closing &lt;/body&gt; tag --&gt;
+&lt;script src="https://cdn.yeahnoiknow.com/ynik-embed.js" 
+        data-agent-id="your-agent-id"
+        data-position="bottom-right"
+        data-theme="dark"&gt;&lt;/script&gt;</code></pre>
 
-              <h3 class="text-xl font-semibold mb-4 text-gray-200">Send Message</h3>
-              <pre class="mb-6"><code>POST /v1/agents/:id/chat
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Configuration Options</h4>
+                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                  <div class="bg-gray-800 p-3 rounded">
+                    <code class="text-blue-300">data-agent-id</code>
+                    <p class="text-xs text-gray-400 mt-1">Your unique agent identifier</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded">
+                    <code class="text-blue-300">data-position</code>
+                    <p class="text-xs text-gray-400 mt-1">bottom-right, bottom-left, top-right, top-left</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded">
+                    <code class="text-blue-300">data-theme</code>
+                    <p class="text-xs text-gray-400 mt-1">dark, light, auto</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded">
+                    <code class="text-blue-300">data-trigger-text</code>
+                    <p class="text-xs text-gray-400 mt-1">Custom button text (default: "Chat")</p>
+                  </div>
+                </div>
 
-{
-  "message": "Hello, I need help with my project",
-  "context": {
-    "user_id": "user123",
-    "session_id": "session456"
-  }
-}</code></pre>
+                <div class="bg-blue-900 bg-opacity-20 border border-blue-400 border-opacity-30 p-4 rounded-lg">
+                  <p class="text-blue-200 text-sm">
+                    <strong>✨ That's it!</strong> The chatbot will automatically appear on your site with a floating button that opens the chat interface.
+                  </p>
+                </div>
+              </div>
 
-              <h3 class="text-xl font-semibold mb-4 text-gray-200">Response Format</h3>
-              <pre><code>{
-  "response": "I'd be happy to help! What kind of project are you working on?",
-  "agent_id": "agent789",
-  "session_id": "session456",
-  "timestamp": "2025-06-24T10:30:00Z"
-}</code></pre>
+              <!-- Custom UI Method -->
+              <div class="section-glow p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-cyan-300">
+                  🎨 2. Custom UI Method
+                </h3>
+                <p class="text-gray-300 mb-4">
+                  Build your own chat interface while YNIK handles all the backend logic. Use <code>data-ynik</code> attributes to identify elements.
+                </p>
+
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">HTML Template</h4>
+                <pre class="mb-4"><code>&lt;!-- Chat Container --&gt;
+&lt;div class="max-w-md mx-auto bg-gray-900 rounded-lg shadow-xl" 
+     data-ynik="container" 
+     data-agent-id="your-agent-id"&gt;
+  
+  &lt;!-- Messages Area --&gt;
+  &lt;div class="h-96 overflow-y-auto p-4 space-y-3" 
+       data-ynik="messages"
+       data-ynik-first="Hello! I'm here to help. What can I assist you with today?"&gt;
+    &lt;!-- Messages will be injected here --&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Input Area --&gt;
+  &lt;div class="border-t border-gray-700 p-4" 
+       data-ynik="input-area"&gt;
+    &lt;div class="flex space-x-2"&gt;
+      &lt;input type="text" 
+             class="flex-1 px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-white" 
+             data-ynik="input" 
+             placeholder="Type your message..."&gt;
+      &lt;button class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700" 
+              data-ynik="send-button"&gt;
+        Send
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Message Bubble Templates</h4>
+                <pre class="mb-4"><code>&lt;!-- User Message Template --&gt;
+&lt;div class="flex justify-end" data-ynik="user-message"&gt;
+  &lt;div class="bg-blue-600 text-white px-4 py-2 rounded-lg max-w-xs" 
+       data-ynik="user-bubble"&gt;
+    &lt;!-- User message content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Bot Message Template --&gt;
+&lt;div class="flex justify-start" data-ynik="bot-message"&gt;
+  &lt;div class="bg-gray-700 text-white px-4 py-2 rounded-lg max-w-xs" 
+       data-ynik="bot-bubble"&gt;
+    &lt;!-- Bot message content --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Initialize Custom UI</h4>
+                <pre class="mb-4"><code>&lt;script src="https://cdn.yeahnoiknow.com/ynik-custom.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // Initialize YNIK with your custom UI
+  YNIK.init({
+    agentId: 'your-agent-id',
+    customUI: true,
+    onReady: function() {
+      console.log('YNIK agent ready!');
+    },
+    onMessage: function(message, isUser) {
+      console.log('New message:', message);
+    }
+  });
+&lt;/script&gt;</code></pre>
+
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Required Data Attributes</h4>
+                <div class="grid md:grid-cols-2 gap-3">
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="container"</code>
+                    <p class="text-gray-400 mt-1">Main chat container</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="messages"</code>
+                    <p class="text-gray-400 mt-1">Messages scroll area</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="input"</code>
+                    <p class="text-gray-400 mt-1">Text input field</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="send-button"</code>
+                    <p class="text-gray-400 mt-1">Send message button</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="user-bubble"</code>
+                    <p class="text-gray-400 mt-1">User message template</p>
+                  </div>
+                  <div class="bg-gray-800 p-3 rounded text-sm">
+                    <code class="text-cyan-300">data-ynik="bot-bubble"</code>
+                    <p class="text-gray-400 mt-1">Bot message template</p>
+                  </div>
+                </div>
+
+                <div class="bg-green-900 bg-opacity-20 border border-green-400 border-opacity-30 p-4 rounded-lg mt-4">
+                  <p class="text-green-200 text-sm">
+                    <strong>🎨 Full Control:</strong> Style everything with your own CSS classes while YNIK handles the conversation logic, message routing, and agent responses.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Comparison -->
+              <div class="bg-gray-800 border border-gray-600 p-4 rounded-lg">
+                <h4 class="text-lg font-semibold mb-3 text-gray-200">Which Method Should I Use?</h4>
+                <div class="grid md:grid-cols-2 gap-4 text-sm">
+                  <div>
+                    <h5 class="font-semibold text-purple-300 mb-2">Snippet Embed</h5>
+                    <ul class="text-gray-300 space-y-1">
+                      <li>✅ Fastest setup (1 line of code)</li>
+                      <li>✅ Automatic updates</li>
+                      <li>✅ Mobile responsive</li>
+                      <li>⚠️ Limited customization</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 class="font-semibold text-cyan-300 mb-2">Custom UI</h5>
+                    <ul class="text-gray-300 space-y-1">
+                      <li>✅ Complete design control</li>
+                      <li>✅ Brand consistency</li>
+                      <li>✅ Custom layouts</li>
+                      <li>⚠️ More development time</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </section>
 
             <!-- Troubleshooting Section -->
@@ -405,13 +561,13 @@
         <a href="/agent/" class="hover:text-white transition-colors duration-200">
           Try Agent
         </a>
-        <a  href="mailto:demo@yeahnoiknow.com" target="_blank" class="hover:text-blue-white transition-colors duration-200">
+        <a  href="/agent/?id=intake-wizard" target="_blank" class="hover:text-blue-white transition-colors duration-200">
           Let's Talk
         </a>
-        <a href="mailto:support@yeahnoiknow.com" class="hover:text-white transition-colors duration-200">
+        <a href="/agent/?id=product-support" class="hover:text-white transition-colors duration-200">
           Support
         </a>
-        <a href="mailto:partners@yeahnoiknow.com" target="_blank" class="hover:text-blue-white transition-colors duration-200">
+        <a href="/agent/?id=intake-wizard" target="_blank" class="hover:text-blue-white transition-colors duration-200">
           Partnerships
         </a>
       </div>
