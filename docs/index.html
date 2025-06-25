@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation - Yeah No I Know</title>
+  <meta name="description" content="YNIK Documentation - Build and deploy intelligent AI agents" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: 
+        radial-gradient(circle at 20% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 30% 80%, rgba(6, 182, 212, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.04) 0%, transparent 50%),
+        radial-gradient(circle at 90% 10%, rgba(245, 158, 11, 0.05) 0%, transparent 50%),
+        linear-gradient(to right, #0a0f1c, #111827);
+      position: relative;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1;
+    }
+    main {
+      position: relative;
+      z-index: 2;
+    }
+    .section-glow {
+      background-color: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(2px);
+      border-radius: 0.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .blue-accent {
+      color: #3b82f6;
+    }
+    .blue-accent:hover {
+      color: #60a5fa;
+    }
+    .action-button {
+      background-color: white;
+      color: #1f2937;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+    }
+    .action-button:hover {
+      background-color: #f8fafc;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+    .docs-container {
+      max-width: 900px;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .nav-link {
+      transition: all 0.3s ease;
+      border-left: 3px solid transparent;
+    }
+    .nav-link:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-left-color: rgba(59, 130, 246, 0.6);
+    }
+    .nav-link.active {
+      background: rgba(59, 130, 246, 0.1);
+      border-left-color: #3b82f6;
+    }
+    code {
+      background: rgba(0, 0, 0, 0.5);
+      color: #fbbf24;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    }
+    pre {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+    }
+  </style>
+</head>
+<body class="text-white font-sans">
+  <main class="min-h-screen p-4 md:p-8">
+    <!-- Header -->
+    <header class="mx-auto text-center mb-12 flex justify-center">
+      <a href="/" class="inline-block text-white font-black tracking-tight opacity-30 hover:opacity-80 transition-opacity duration-500" style="mix-blend-mode: screen; filter: brightness(2) contrast(1.5);">
+        YNIK™
+      </a>
+    </header>
+
+    <div class="max-w-7xl mx-auto">
+      <!-- Page Title -->
+      <section class="text-center mb-12">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+          Documentation
+        </h1>
+        <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+          Learn how to build, deploy, and manage intelligent AI agents with YNIK
+        </p>
+      </section>
+
+      <div class="grid lg:grid-cols-4 gap-8">
+        <!-- Sidebar Navigation -->
+        <aside class="lg:col-span-1">
+          <div class="section-glow p-6 rounded-lg sticky top-8">
+            <h3 class="text-lg font-semibold mb-4 text-gray-200">Contents</h3>
+            <nav class="space-y-2">
+              <a href="#getting-started" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Getting Started
+              </a>
+              <a href="#creating-agents" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Creating Agents
+              </a>
+              <a href="#personality-config" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Personality Configuration
+              </a>
+              <a href="#templates" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Templates
+              </a>
+              <a href="#deployment" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Deployment
+              </a>
+              <a href="#api-reference" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                API Reference
+              </a>
+              <a href="#troubleshooting" class="nav-link block px-3 py-2 text-sm text-gray-300 hover:text-white rounded">
+                Troubleshooting
+              </a>
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="lg:col-span-3">
+          <div class="docs-container p-8 rounded-lg">
+            
+            <!-- Getting Started Section -->
+            <section id="getting-started" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-blue-300">Getting Started</h2>
+              <p class="text-gray-300 mb-6 leading-relaxed">
+                Welcome to YNIK! This guide will help you create your first AI agent in minutes. 
+                No coding required - just your creativity and purpose.
+              </p>
+
+              <div class="section-glow p-6 rounded-lg mb-6">
+                <h3 class="text-xl font-semibold mb-4 text-purple-300">Quick Start</h3>
+                <ol class="list-decimal list-inside space-y-3 text-gray-300">
+                  <li>Choose a template or start from scratch</li>
+                  <li>Define your agent's personality and purpose</li>
+                  <li>Configure conversation flow and responses</li>
+                  <li>Test your agent in the playground</li>
+                  <li>Deploy and share with your team or the world</li>
+                </ol>
+              </div>
+
+              <div class="bg-blue-900 bg-opacity-20 border border-blue-400 border-opacity-30 p-4 rounded-lg mb-6">
+                <p class="text-blue-200">
+                  <strong>💡 Pro Tip:</strong> Start with a template that matches your use case. 
+                  You can always customize it later to fit your specific needs.
+                </p>
+              </div>
+            </section>
+
+            <!-- Creating Agents Section -->
+            <section id="creating-agents" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-green-300">Creating Your First Agent</h2>
+              
+              <h3 class="text-xl font-semibold mb-4 text-gray-200">1. Choose Your Starting Point</h3>
+              <p class="text-gray-300 mb-4">
+                You have two options when creating a new agent:
+              </p>
+              <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6 ml-4">
+                <li><strong>Template:</strong> Start with a pre-built agent for common use cases</li>
+                <li><strong>Blank Canvas:</strong> Build completely custom agent from scratch</li>
+              </ul>
+
+              <h3 class="text-xl font-semibold mb-4 text-gray-200">2. Define Core Purpose</h3>
+              <p class="text-gray-300 mb-4">
+                Every great agent starts with a clear purpose. Ask yourself:
+              </p>
+              <div class="section-glow p-4 rounded-lg mb-6">
+                <ul class="list-disc list-inside space-y-2 text-gray-300">
+                  <li>What problem does this agent solve?</li>
+                  <li>Who is the target audience?</li>
+                  <li>What actions should users take after talking to it?</li>
+                  <li>What tone and personality fits best?</li>
+                </ul>
+              </div>
+            </section>
+
+            <!-- Personality Configuration Section -->
+            <section id="personality-config" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-purple-300">Personality Configuration</h2>
+              
+              <p class="text-gray-300 mb-6">
+                YNIK agents aren't just chatbots - they're personalities with purpose. 
+                Here's how to craft an engaging conversational experience:
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-3 text-yellow-300">🎨 Personality Traits</h4>
+                  <ul class="text-sm text-gray-300 space-y-1">
+                    <li>• Friendly & approachable</li>
+                    <li>• Direct & action-oriented</li>
+                    <li>• Empathetic & supportive</li>
+                    <li>• Professional & knowledgeable</li>
+                  </ul>
+                </div>
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-3 text-cyan-300">🧭 Conversation Style</h4>
+                  <ul class="text-sm text-gray-300 space-y-1">
+                    <li>• Ask clarifying questions</li>
+                    <li>• Provide actionable advice</li>
+                    <li>• Use examples and analogies</li>
+                    <li>• Remember conversation context</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-purple-900 bg-opacity-20 border border-purple-400 border-opacity-30 p-4 rounded-lg">
+                <h4 class="text-lg font-semibold mb-2 text-purple-300">Example Configuration</h4>
+                <pre><code class="text-gray-300">{
+  "role": "figure skating expert",
+  "tone": "encouraging but ruthless",
+  "interjections": [
+    "You can do this!",
+    "Don't hold back!",
+    "Push yourself!"
+  ],
+  "steps": [
+    "Warm up with basic moves",
+    "Practice jumps and spins",
+    "Focus on form and technique"
+  ],
+}</code></pre>
+              </div>
+            </section>
+
+            <!-- Templates Section -->
+            <section id="templates" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-yellow-300">Available Templates</h2>
+              
+              <p class="text-gray-300 mb-6">
+                Start fast with our curated collection of agent templates:
+              </p>
+
+              <div class="grid md:grid-cols-2 gap-4 mb-6">
+                <div class="section-glow p-4 rounded-lg border-l-4 border-blue-400">
+                  <h4 class="font-semibold text-blue-300 mb-2">📊 Market Intelligence</h4>
+                  <p class="text-sm text-gray-300">Expert on competitors and industry trends</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-green-400">
+                  <h4 class="font-semibold text-green-300 mb-2">📝 Intake Wizard</h4>
+                  <p class="text-sm text-gray-300">Onboarding with smart questions</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-purple-400">
+                  <h4 class="font-semibold text-purple-300 mb-2">🎨 Creative Kickoff</h4>
+                  <p class="text-sm text-gray-300">Overcome creative blocks and find direction</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg border-l-4 border-red-400">
+                  <h4 class="font-semibold text-red-300 mb-2">🗣️ Conversation Prep</h4>
+                  <p class="text-sm text-gray-300">Practice difficult conversations</p>
+                </div>
+              </div>
+
+              <a href="/agent/?id=intake-wizard" class="action-button inline-block px-6 py-3 rounded-lg font-semibold">
+                Try a Template →
+              </a>
+            </section>
+
+            <!-- Deployment Section -->
+            <section id="deployment" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-cyan-300">Deployment Options</h2>
+              
+              <p class="text-gray-300 mb-6">
+                Once your agent is ready, you have several deployment options:
+              </p>
+
+              <div class="space-y-4 mb-6">
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-blue-300">🌐 Public Link</h4>
+                  <p class="text-gray-300 text-sm">Share a direct link that anyone can use to chat with your agent</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-green-300">🔒 Private Access</h4>
+                  <p class="text-gray-300 text-sm">Restrict access to your team or specific users with authentication</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-purple-300">🔌 Website Embed</h4>
+                  <p class="text-gray-300 text-sm">Embed your agent into websites, apps, or other systems super easy.</p>
+                </div>
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-yellow-300">📦 Custom UI</h4>
+                  <p class="text-gray-300 text-sm">Completely control the UI, but let us do all the plumbing.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- API Reference Section -->
+            <section id="api-reference" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-red-300">API Reference</h2>
+              
+              <p class="text-gray-300 mb-6">
+                Integrate YNIK agents into your applications with our REST API:
+              </p>
+
+              <h3 class="text-xl font-semibold mb-4 text-gray-200">Authentication</h3>
+              <pre class="mb-6"><code>curl -H "Authorization: Bearer YOUR_API_KEY" \
+     -H "Content-Type: application/json" \
+     https://api.yeahnoiknow.com/v1/agents</code></pre>
+
+              <h3 class="text-xl font-semibold mb-4 text-gray-200">Send Message</h3>
+              <pre class="mb-6"><code>POST /v1/agents/:id/chat
+
+{
+  "message": "Hello, I need help with my project",
+  "context": {
+    "user_id": "user123",
+    "session_id": "session456"
+  }
+}</code></pre>
+
+              <h3 class="text-xl font-semibold mb-4 text-gray-200">Response Format</h3>
+              <pre><code>{
+  "response": "I'd be happy to help! What kind of project are you working on?",
+  "agent_id": "agent789",
+  "session_id": "session456",
+  "timestamp": "2025-06-24T10:30:00Z"
+}</code></pre>
+            </section>
+
+            <!-- Troubleshooting Section -->
+            <section id="troubleshooting" class="mb-12">
+              <h2 class="text-3xl font-bold mb-6 text-orange-300">Troubleshooting</h2>
+              
+              <div class="space-y-6">
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-red-300">Agent Not Responding</h4>
+                  <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside ml-4">
+                    <li>Check if agent is deployed and active</li>
+                    <li>Verify API key permissions</li>
+                    <li>Review conversation flow configuration</li>
+                  </ul>
+                </div>
+
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-yellow-300">Unexpected Responses</h4>
+                  <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside ml-4">
+                    <li>Review personality configuration settings</li>
+                    <li>Check for conflicting instructions</li>
+                    <li>Test with different conversation starters</li>
+                  </ul>
+                </div>
+
+                <div class="section-glow p-4 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-2 text-blue-300">Performance Issues</h4>
+                  <ul class="text-gray-300 text-sm space-y-1 list-disc list-inside ml-4">
+                    <li>Monitor token usage and rate limits</li>
+                    <li>Optimize conversation length</li>
+                    <li>Consider caching for frequently asked questions</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="bg-gray-800 border border-gray-600 p-4 rounded-lg mt-6">
+                <h4 class="text-lg font-semibold mb-2 text-gray-200">Need More Help?</h4>
+                <p class="text-gray-300 text-sm mb-3">
+                  Can't find what you're looking for? Our support team is here to help.
+                </p>
+                <a href="mailto:support@yeahnoiknow.com" class="action-button inline-block px-4 py-2 rounded text-sm">
+                  Contact Support
+                </a>
+              </div>
+            </section>
+
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-6xl mx-auto py-8 mt-16 border-t border-gray-700">
+      <div class="flex flex-wrap justify-center gap-8 text-gray-400">
+        <a href="/" class="hover:text-white transition-colors duration-200">
+          Home
+        </a>
+        <a href="/agent/" class="hover:text-white transition-colors duration-200">
+          Try Agent
+        </a>
+        <a  href="mailto:demo@yeahnoiknow.com" target="_blank" class="hover:text-blue-white transition-colors duration-200">
+          Let's Talk
+        </a>
+        <a href="mailto:support@yeahnoiknow.com" class="hover:text-white transition-colors duration-200">
+          Support
+        </a>
+        <a href="mailto:partners@yeahnoiknow.com" target="_blank" class="hover:text-blue-white transition-colors duration-200">
+          Partnerships
+        </a>
+      </div>
+      <div class="text-center mt-6 text-sm text-gray-500">
+        <p>&copy; YNIK: AI scaffolding with an agenda.</p>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+          
+          // Update active nav state
+          document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+          this.classList.add('active');
+        }
+      });
+    });
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section[id]');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

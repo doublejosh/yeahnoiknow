@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Let's start a band [YNIK]</title>
+  <title>Yeah No I Know [YNIK]</title>
   <meta name="description" content="AI Agent - Yeah No I Know" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
@@ -103,18 +103,18 @@
 <body class="text-white font-sans">
   <main class="min-h-screen p-4 pt-4">
     <header class="mx-auto text-center mb-12 flex justify-center">
-      <a href="/" class="inline-block text-white font-black tracking-tight opacity-30 hover:opacity-80 transition-opacity duration-500 flex justify-center" style="mix-blend-mode: screen; filter: brightness(2) contrast(1.5);">
+      <a href="/" class="inline-block text-white font-black tracking-tight opacity-20 hover:opacity-70 transition-opacity duration-1000 flex justify-center" style="mix-blend-mode: screen; filter: brightness(2) contrast(1.5);">
         YNIK™
       </a>
     </header>
 
     <section class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-2xl font-semibold mb-2 text-white" id="pageTitle">
-            🎸 Let's Start a Band! 🥁
+        <h1 class="text-3xl font-semibold mb-2 text-white" id="pageTitle">
+          Yeah No I Know
         </h1>
         <p class="text-xs text-gray-500 hover:text-gray-400 transition-colors duration-500 max-w-xl mx-10 md:mx-auto">
-            I can help with research, planning, creative tasks, and thoughtful conversation.
+          I can help with research, planning, creative tasks, and thoughtful conversation.
         </p>
       </div>
 
@@ -177,8 +177,8 @@
       </div>
 
       <!-- Quick Actions -->
-      <div class="mt-8" id="suggest">
-        <p class="text-xs text-gray-500 mb-3 text-center">Choose an agent template:</p>
+      <div class="mt-12" id="suggest">
+        <p class="text-sm text-gray-500 mb-4 text-center">Try a few more...</p>
         <div class="flex flex-wrap justify-center gap-2 max-w-2xl mx-auto">
           <a href="/agent/?id=market-intelligence" class="px-3 py-1.5 text-xs bg-white bg-opacity-5 hover:bg-opacity-10 rounded-full border border-white border-opacity-10 hover:border-opacity-20 transition-all duration-300 text-gray-300 hover:text-white backdrop-filter backdrop-blur-sm opacity-50 hover:opacity-100">
             📊 Market Intelligence
@@ -431,10 +431,7 @@
       statusText.textContent = 'Ready';
     }, 900);
     
-    // Character counter functionality and typing indicators
-    let userTypingTimeout;
-    let isUserTyping = false;
-    
+    // Character counter functionality
     textarea.addEventListener('input', function() {
       const count = this.value.length;
       charCount.textContent = count;
@@ -447,28 +444,6 @@
       } else {
         charCount.style.color = '#6b7280';
       }
-
-      // Show user typing indicator if there's text and user isn't already typing
-      if (count > 0 && !isUserTyping) {
-        isUserTyping = true;
-        addUserTypingIndicator();
-      }
-
-      // Clear existing timeout
-      clearTimeout(userTypingTimeout);
-
-      // Set new timeout to hide typing indicator after 2 seconds of no typing
-      userTypingTimeout = setTimeout(() => {
-        isUserTyping = false;
-        removeUserTypingIndicator();
-      }, 2000);
-
-      // If textarea is empty, immediately hide typing indicator
-      if (count === 0) {
-        isUserTyping = false;
-        removeUserTypingIndicator();
-        clearTimeout(userTypingTimeout);
-      }
     });
 
     // Clear button functionality
@@ -477,10 +452,6 @@
       textarea.value = '';
       charCount.textContent = '0';
       charCount.style.color = '#6b7280';
-      // Remove user typing indicator when clearing
-      isUserTyping = false;
-      removeUserTypingIndicator();
-      clearTimeout(userTypingTimeout);
       textarea.focus();
     });
 
@@ -511,43 +482,6 @@
       `;
       messagesArea.insertAdjacentHTML('beforeend', userMessageHtml);
       messagesArea.scrollTop = messagesArea.scrollHeight;
-    }
-
-    // Function to add user typing indicator
-    function addUserTypingIndicator() {
-      // Remove existing user typing indicator if it exists
-      const existingUserTyping = document.getElementById('userTyping');
-      if (existingUserTyping) {
-        existingUserTyping.remove();
-      }
-
-      const typingHtml = `
-        <div class="flex justify-end" id="userTyping">
-          <div class="max-w-xs lg:max-w-md">
-            <div class="bg-blue-500 bg-opacity-20 backdrop-filter backdrop-blur-sm rounded-2xl rounded-br-sm px-4 py-3 border border-blue-400 border-opacity-30">
-              <div class="flex space-x-1">
-                <div class="w-2 h-2 bg-gray-300 rounded-full animate-bounce"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style="animation-delay: 0.2s;"></div>
-                <div class="w-2 h-2 bg-gray-300 rounded-full animate-bounce" style="animation-delay: 0.4s;"></div>
-              </div>
-            </div>
-            <div class="flex items-center justify-end mt-1 mr-2">
-              <span class="text-xs text-gray-500 mr-2">You are typing...</span>
-              <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-            </div>
-          </div>
-        </div>
-      `;
-      messagesArea.insertAdjacentHTML('beforeend', typingHtml);
-      messagesArea.scrollTop = messagesArea.scrollHeight;
-    }
-
-    // Function to remove user typing indicator
-    function removeUserTypingIndicator() {
-      const userTypingElement = document.getElementById('userTyping');
-      if (userTypingElement) {
-        userTypingElement.remove();
-      }
     }
 
     // Function to add bot typing indicator
@@ -611,11 +545,6 @@
     sendButton.addEventListener('click', function() {
       const message = textarea.value.trim();
       if (message && !sendButton.disabled) {
-        // Remove user typing indicator before sending
-        isUserTyping = false;
-        removeUserTypingIndicator();
-        clearTimeout(userTypingTimeout);
-        
         // Add user message
         addUserMessage(message);
         
