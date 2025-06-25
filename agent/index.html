@@ -110,7 +110,7 @@
 
     <section class="max-w-4xl mx-auto">
       <div class="mb-12 text-center">
-        <h1 class="text-2xl font-semibold mb-2 text-white">
+        <h1 class="text-2xl font-semibold mb-2 text-white" id="pageTitle">
             🎸 Let's Start a Band! 🥁
         </h1>
         <p class="text-xs text-gray-500 hover:text-gray-400 transition-colors duration-500 max-w-xl mx-auto">
@@ -237,6 +237,34 @@
     // Agent status elements
     const statusIndicator = document.getElementById('statusIndicator');
     const statusText = document.getElementById('statusText');
+    const pageTitle = document.getElementById('pageTitle');
+    
+    // Get URL parameter and update title
+    const urlParams = new URLSearchParams(window.location.search);
+    const agentId = urlParams.get('id');
+    
+    // Map of agent IDs to display titles
+    const agentTitles = {
+      'market-intelligence': '📊 Market Intelligence',
+      'intake-wizard': '📝 Intake Wizard',
+      'creative-kickoff': '🎨 Creative Kickoff',
+      'conversation-prep': '🗣️ Conversation Prep',
+      'morning-momentum': '🌅 Morning Momentum',
+      'study-buddy': '📚 Study Buddy',
+      'product-support': '🛠️ Product Support',
+      'strategic-leadership': '⚡ Strategic Leadership',
+      'evening-reflection': '🌙 Evening Reflection',
+      'life-planning': '🗺️ Life Planning',
+      'generate-website': '🌐 Generate Website',
+      'brand-strategy': '🎯 Brand Strategy',
+      'debate-ideas': '⚖️ Debate Ideas',
+      'onboarding-journeys': '🚀 Onboarding Journeys'
+    };
+    
+    // Update title if agent ID is provided
+    if (agentId && agentTitles[agentId]) {
+      pageTitle.textContent = agentTitles[agentId];
+    }
     
     // Change agent status to ready after 500ms
     setTimeout(() => {
