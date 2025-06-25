@@ -152,9 +152,9 @@
           <!-- Action Bar -->
           <div class="flex items-center justify-between pt-3 border-t border-white border-opacity-5">
             <div class="flex items-center space-x-4">
-              <div class="flex items-center space-x-2 text-xs text-gray-400">
-                <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span>Agent ready</span>
+              <div class="flex items-center space-x-2 text-xs text-gray-400 opacity-50" id="agentStatus">
+                <div class="w-2 h-2 bg-yellow-400 rounded-full" id="statusIndicator"></div>
+                <span id="statusText">Inactive</span>
               </div>
             </div>
             
@@ -233,6 +233,16 @@
     
     // Response tracking - keep track of used responses
     let usedResponses = new Set();
+    
+    // Agent status elements
+    const statusIndicator = document.getElementById('statusIndicator');
+    const statusText = document.getElementById('statusText');
+    
+    // Change agent status to ready after 500ms
+    setTimeout(() => {
+      statusIndicator.className = 'w-2 h-2 bg-green-400 rounded-full animate-pulse';
+      statusText.textContent = 'Ready';
+    }, 500);
     
     // Character counter functionality and typing indicators
     let userTypingTimeout;
