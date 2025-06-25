@@ -237,8 +237,8 @@
     const sendIcon = document.getElementById('sendIcon');
     const sendText = document.getElementById('sendText');
     
-    // Response tracking - keep track of used responses
-    let usedResponses = new Set();
+    // Response tracking - keep track of used response indices
+    let usedResponseIndices = new Set();
     
     // Agent status elements
     const statusIndicator = document.getElementById('statusIndicator');
@@ -651,9 +651,26 @@
               ];
             }
             
-            // Select random response from available ones
-            const randomIndex = Math.floor(Math.random() * availableResponses.length);
-            const selectedResponse = availableResponses[randomIndex];
+            // Find unused responses
+            let unusedIndices = [];
+            for (let i = 0; i < availableResponses.length; i++) {
+              if (!usedResponseIndices.has(i)) {
+                unusedIndices.push(i);
+              }
+            }
+            
+            // If all responses have been used, reset the tracking
+            if (unusedIndices.length === 0) {
+              usedResponseIndices.clear();
+              unusedIndices = Array.from({length: availableResponses.length}, (_, i) => i);
+            }
+            
+            // Select random unused response
+            const randomUnusedIndex = unusedIndices[Math.floor(Math.random() * unusedIndices.length)];
+            const selectedResponse = availableResponses[randomUnusedIndex];
+            
+            // Mark this response index as used
+            usedResponseIndices.add(randomUnusedIndex);
             
             addBotResponse(selectedResponse);
           }, Math.random() * 2000 + 2000); // 2-4 seconds
