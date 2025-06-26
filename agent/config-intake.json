@@ -40,19 +40,16 @@
 	"Research": [
 		{
 			"ID": "123456789",
-			"Topic": "",
-			"Hints": "",
+            "LastRun": "2025-01-15",
+            "Smarts": "gpt-4.0",
 			"Gather": "Wide",
-			"GroupBy": "",
-			"LastRun": "2025-01-15",
-			"Smarts": "gpt-4.0",
-			"Spice": "high",
-			"Comparisons": [
-				"", ""
-			],
-			"URLs": [
-				"https://example.com"
-			]
+            "Spice": "High",
+			"Topic": "AI chatbots",
+			"Hints": "Designed to assist users in various tasks, providing information and support through conversational interfaces.",
+            "GroupBy": "Software Company",
+            "Facts": ["Product Name", "Features", "Pricing", "Industry"],
+            "Searches": [""],
+            "Blob": "# Placeholder for blob content"
 		}
 	]
 }
