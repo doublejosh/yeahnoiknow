@@ -1,0 +1,27 @@
+{
+  "data": [
+    {
+      "document_id": "doc_cmcd5eu2u00020fs6f0oxvmqu",
+      "data": {
+        "content": "{'stuff': 'things'}"
+      },
+      "document_data_id": "document_data_cmcd5eu3l00030fs6s8skjezo",
+      "created_at": "2025-06-26T08:55:48.938533Z",
+      "last_updated_at": "2025-06-26T08:55:48.938609Z",
+      "created_by": {
+        "type": "api_key",
+        "details": {
+          "api_key": {}
+        }
+      },
+      "last_updated_by": {
+        "type": "api_key",
+        "details": {
+          "api_key": {}
+        }
+      },
+      "revision_id": "rev_cmcd5eua200040fs69jfjatgw"
+    }
+  ],
+  "status": null
+}

@@ -1,0 +1,56 @@
+{
+	"Meta": {
+		"Title": "",
+		"Description": "L",
+		"Version": "1.0",
+		"Author": "",
+		"Tags": [],
+		"Category": ""
+	},
+  "Role": "",
+  "Purpose": "",
+  "Response": "",
+  "Voice": "",
+  "Interjections": [
+    ""
+  ],
+  "Steps":[
+        {
+            "Goal": "",
+            "Guidance": "",
+            "Smarts": "gpt-2.0-turbo"
+        },
+        {
+            "Goal": "",
+            "Guidance": "",
+            "Smarts": "gpt-4.0"
+        },
+        {
+            "Goal": "",
+            "Guidance": "",
+            "Smarts": null,
+            "Achievement": {
+                "URL": "https://example.com/you-did-it",
+                "Message": ""
+            }
+        }
+	],
+	"Research": [
+		{
+			"ID": "123456789",
+			"Topic": "",
+			"Hints": "",
+			"Gather": "Wide",
+			"GroupBy": "",
+			"LastRun": "2025-01-15",
+			"Smarts": "gpt-4.0",
+			"Spice": "high",
+			"Comparisons": [
+				"", ""
+			],
+			"URLs": [
+				"https://example.com"
+			]
+		}
+	]
+}
