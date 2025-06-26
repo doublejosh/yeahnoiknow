@@ -44,3 +44,10 @@ Intake funnel:
     6) Generate account
     7) Collect other info
     8) Proceed to first bot tweaking
+
+
+    <!--
+    Copilot: copilot_cmcd256r800010gs6u5y6hwce
+    Workflow: wf_cmcd2549f00010gs643ucdo6a
+    https://docs.scoutos.com/api-sdk/endpoints/documents/get
+    -->
