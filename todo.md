@@ -6,8 +6,9 @@ Agent prompt steps:
     2) History - cache or storage
     3) Search
 2) Reply - message build from input + history + goal
-3) Instructions - canvas transformations (v2)
+3) Instructions - canvas transformations (v2), external actions
 4) Analysis - goal(s), meta goal, recommend
+5) Extractions - user details (email, name, city, loves), agent goals, feedback
 
 
 Create an agent:
@@ -35,6 +36,7 @@ Intake funnel:
 - Get credit allowance
 - After few question inject: "try another template" and "your chat is limited"
 - Eventually "this chat is over, sorry"
+- Inspect every message for personal info and extract
 - Pressume toward "intake-wizard"
     1) Ask about their first bot
     2) Determine motivation
